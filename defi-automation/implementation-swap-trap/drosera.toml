@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.implementation_swap_monitor]
+path = "out/ImplementationSwapTrap.sol/ImplementationSwapTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be incident response contract address
+response_function = "handleProxyUpgrade(address,address,address,string)" # function to handle proxy upgrades
+cooldown_period_blocks = 10
+min_number_of_operators = 2
+max_number_of_operators = 5
+block_sample_size = 5
+private_trap = false
+whitelist = []
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address

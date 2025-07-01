@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.lowgaswallet]
+path = "out/LowGasWalletTrap.sol/LowGasWalletTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be treasury or refill contract address
+response_function = "refillWallet(address,uint256)" # function to call to refill the wallet
+cooldown_period_blocks = 1000 # prevent rapid refills - wait ~4 hours between refills
+min_number_of_operators = 1
+max_number_of_operators = 3
+block_sample_size = 10
+private_trap = false
+whitelist = []
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address

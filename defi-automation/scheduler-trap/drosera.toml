@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.scheduler]
+path = "out/SchedulerTrap.sol/SchedulerTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be actual response contract address
+response_function = "executeScheduledAction(uint256,string)" # function to call when target block/time reached
+cooldown_period_blocks = 100 # prevent rapid re-triggering
+min_number_of_operators = 1
+max_number_of_operators = 3
+block_sample_size = 10
+private_trap = false
+whitelist = []
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address

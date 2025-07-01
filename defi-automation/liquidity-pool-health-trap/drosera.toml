@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.poolhealth]
+path = "out/LiquidityPoolHealthTrap.sol/LiquidityPoolHealthTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be pool management contract
+response_function = "handleUnhealthyPools((address,address,address,uint112,uint112,uint256,uint256,bool)[])" # function to handle unhealthy pool alerts
+cooldown_period_blocks = 100 # prevent spam alerts - wait ~20 minutes between alerts
+min_number_of_operators = 2
+max_number_of_operators = 5
+block_sample_size = 10
+private_trap = false
+whitelist = []
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address

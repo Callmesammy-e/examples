@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.staleoracle]
+path = "out/StaleOracleTrap.sol/StaleOracleTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be oracle management contract address
+response_function = "alertStaleOracle(address,int256,uint256,uint256)" # function to alert about stale oracle data
+cooldown_period_blocks = 300 # prevent spam alerts - wait ~1 hour between alerts
+min_number_of_operators = 2
+max_number_of_operators = 5
+block_sample_size = 10
+private_trap = false
+whitelist = []
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address

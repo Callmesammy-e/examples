@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.aave_liquidation_monitor]
+path = "out/AaveLiquidationTrap.sol/AaveLiquidationTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be liquidation contract address
+response_function = "liquidatePosition(address,address,address,uint256)" # function to liquidate unhealthy positions
+cooldown_period_blocks = 50
+min_number_of_operators = 2
+max_number_of_operators = 5
+block_sample_size = 10
+private_trap = false
+whitelist = []
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address

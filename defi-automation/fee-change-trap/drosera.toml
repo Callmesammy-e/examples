@@ -1,0 +1,14 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.simple_fee_monitor]
+path = "out/SimpleFeeChangeTrap.sol/SimpleFeeChangeTrap.json"
+response_contract = "0x..." # Your response contract
+response_function = "handleViolation(uint256)" # Simple response: just pass the fee value
+block_sample_size = 1
+cooldown_period_blocks = 5
+min_number_of_operators = 1
+max_number_of_operators = 2

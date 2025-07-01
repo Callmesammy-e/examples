@@ -1,0 +1,17 @@
+ethereum_rpc = ""
+drosera_rpc = ""
+drosera_address = ""
+
+[traps]
+
+[traps.supplywatch]
+path = "out/TokenSupplyWatchTrap.sol/TokenSupplyWatchTrap.json"
+response_contract = "0x0000000000000000000000000000000000000000" # placeholder - would be token management contract
+response_function = "handleSuspiciousSupplyChange((address,uint256,uint256)[])" # function to handle unexpected supply changes
+cooldown_period_blocks = 50 # prevent spam alerts - wait ~10 minutes between alerts for same token
+min_number_of_operators = 3
+max_number_of_operators = 6
+block_sample_size = 10
+private_trap = true # high security - only trusted operators
+whitelist = ["0x1f4cf01fee79b881e37b61b03e5721d6d2dbcff9", "0xbcfee287a9034b076286d00c649e9a54da86745a"]
+address = "0x0000000000000000000000000000000000000000" # placeholder - would be deployed trap address
